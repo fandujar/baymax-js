@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
+import {EventEmitterModule} from '@nestjs/event-emitter';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EventEmitterModule } from '@nestjs/event-emitter';
-
+ 
 
 import {SlackModule} from './slack/slack.module'
 
@@ -11,7 +11,7 @@ import {SlackModule} from './slack/slack.module'
     EventEmitterModule.forRoot({
       wildcard: true,
       newListener: true,
-      removeEventListener: true,
+      removeListener: true,
     }),
     SlackModule
   ],
